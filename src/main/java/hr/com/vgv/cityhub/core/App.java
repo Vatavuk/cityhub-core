@@ -20,6 +20,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Entry point of the app.
+ *
  * @author Vedran Vatavuk (123vgv@gmail.com)
  * @version $Id$
  * @checkstyle FinalClassCheck (500 lines)
@@ -30,12 +31,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @SuppressWarnings("PMD.ClassWithOnlyPrivateConstructorsShouldBeFinal")
 public class App {
-
-    /**
-     * Ctor.
-     */
-    private App() {
-    }
 
     /**
      * Main.
