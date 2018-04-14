@@ -8,7 +8,9 @@ import hr.com.vgv.cityhub.core.pois.Nearest;
 import hr.com.vgv.cityhub.core.pois.PoisAsJson;
 import hr.com.vgv.cityhub.core.pois.PoisOf;
 import org.cactoos.scalar.UncheckedScalar;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +28,8 @@ public class GeoPoiController {
         new CmMongo()
     ).value();
 
-    @RequestMapping("/api/v1/pois")
+    @RequestMapping(value = "/api/v1/pois", method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
     public String nearestPois(@RequestParam(value = "type") String type,
         @RequestParam(value = "lat") double lat,
         @RequestParam(value = "lng") double lng) throws Exception {
