@@ -3,6 +3,7 @@ package hr.com.vgv.cityhub.core;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import org.cactoos.Func;
 import org.junit.Test;
 
 /**
@@ -18,6 +19,10 @@ public final class CmMongoTest {
         final MongoCollection<Document> bars = db.getCollection(
             "entities.bars"
         );
+
+        Tmp tmp = method(Tmp::new);
+
+
         //bars.createIndex(Indexes.geo2dsphere("location"));
         /*Point refPoint = new Point(new Position(45.8068722, 15.9680303));
 
@@ -43,5 +48,14 @@ public final class CmMongoTest {
                 )
             );
         }*/
+    }
+
+    public Tmp method(Func<String, Tmp> func) throws Exception {
+        return func.apply("");
+    }
+
+    private static class Tmp {
+
+        public Tmp(final String text) {}
     }
 }
