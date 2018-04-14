@@ -26,7 +26,7 @@ public final class Nearest implements Output {
 
     public Nearest(final Scalar<MongoCollection<Document>> collection,
         final Scalar<Point> location) {
-        this(collection, location, 500.0, 1000.0);
+        this(collection, location, 0.0, 700.0);
     }
 
     public Nearest(final Scalar<MongoCollection<Document>> collection,
