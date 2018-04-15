@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.List;
 import org.bson.Document;
 import org.bson.types.ObjectId;
-import org.cactoos.Scalar;
 
 /**
  * Places of interest from output.
@@ -14,7 +13,7 @@ import org.cactoos.Scalar;
  * @version $Id$
  * @since 1.0
  */
-public final class PoisOf implements Scalar<Iterable<GeoPoi>> {
+public final class PoisOf implements Pois {
 
     private final Output output;
 

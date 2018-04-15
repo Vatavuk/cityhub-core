@@ -14,9 +14,9 @@ import org.cactoos.Scalar;
  */
 public final class PoisAsJson implements Scalar<JsonObject> {
 
-    private final Scalar<Iterable<GeoPoi>> pois;
+    private final Pois pois;
 
-    public PoisAsJson(final Scalar<Iterable<GeoPoi>> places) {
+    public PoisAsJson(final Pois places) {
         this.pois = places;
     }
 
