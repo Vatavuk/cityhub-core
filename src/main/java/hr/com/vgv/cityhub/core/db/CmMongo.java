@@ -13,7 +13,7 @@
  * Mildew Software is recorded but QUANTUM and/or QUANTUM’s licensor(s)
  * retain ownership of the Software itself
  */
-package hr.com.vgv.cityhub.core;
+package hr.com.vgv.cityhub.core.db;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
@@ -33,7 +33,7 @@ import org.cactoos.list.SolidList;
 public final class CmMongo implements Scalar<MongoDatabase> {
 
     @Override
-    public MongoDatabase value() throws Exception {
+    public MongoDatabase value() {
         final int timeout = (int) TimeUnit.SECONDS.toMillis(15L);
         return new MongoClient(
             new ServerAddress(

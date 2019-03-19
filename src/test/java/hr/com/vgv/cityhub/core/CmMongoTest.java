@@ -2,6 +2,7 @@ package hr.com.vgv.cityhub.core;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import hr.com.vgv.cityhub.core.db.CmMongo;
 import org.bson.Document;
 import org.cactoos.Func;
 import org.junit.Test;
