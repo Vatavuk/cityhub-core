@@ -1,7 +1,5 @@
 package hr.com.vgv.cityhub.core.rest;
 
-import hr.com.vgv.cityhub.core.db.CmMongo;
-import hr.com.vgv.cityhub.core.db.MongoPlaces;
 import hr.com.vgv.cityhub.core.places.Places;
 import hr.com.vgv.cityhub.core.places.PoisAsJson;
 import org.springframework.http.MediaType;
@@ -20,9 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class GeoPoiController {
+    private final Places places;
 
-    private static final Places PLACES =
-        new MongoPlaces(new CmMongo().value());
+    public GeoPoiController(Places places) {
+        this.places = places;
+    }
+
 
     /*@RequestMapping(value = "/api/v1/pois/nearest/", method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -45,7 +46,7 @@ public class GeoPoiController {
     public String within(@RequestParam(value = "type") final String type,
         @RequestParam(value = "upper") final double[] upper,
         @RequestParam(value = "lower") final double[] lower) throws Exception {
-        return new PoisAsJson(PLACES.within(type, upper, lower))
+        return new PoisAsJson(places.within(type, upper, lower))
             .json()
             .toString();
     }
@@ -56,6 +57,6 @@ public class GeoPoiController {
         @PathVariable final String type,
         @PathVariable final String id
     ) throws Exception {
-        return PLACES.get(type, id).json().toString();
+        return places.get(type, id).json().toString();
     }
 }
