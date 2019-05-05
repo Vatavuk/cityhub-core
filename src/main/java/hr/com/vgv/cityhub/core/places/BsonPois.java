@@ -11,6 +11,7 @@ import org.cactoos.iterable.IterableEnvelope;
 public class BsonPois extends IterableEnvelope<Poi> {
 
     public BsonPois(final Iterable<Document> places) {
-        super(() -> new Mapped<>(BsonPoi::new, places));
+        super(() -> new Mapped<>(BsonPoi::new, places)
+        );
     }
 }
