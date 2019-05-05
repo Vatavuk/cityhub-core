@@ -1,7 +1,6 @@
 package hr.com.vgv.cityhub.core.db;
 
 import com.github.fakemongo.Fongo;
-import com.mongodb.FongoMongoDatabase;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
@@ -11,12 +10,8 @@ import org.hamcrest.core.IsEqual;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import javax.json.Json;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.mongodb.client.model.Filters.eq;
 
 public class MongoPlacesTest {
 
