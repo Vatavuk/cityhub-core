@@ -12,6 +12,7 @@ import javax.json.JsonObject;
 public class PoisAsJson implements JsonReadable {
 
     private final Iterable<Poi> places;
+    private boolean isWorking;
 
     public PoisAsJson(final Iterable<Poi> places) {
         this.places = places;
