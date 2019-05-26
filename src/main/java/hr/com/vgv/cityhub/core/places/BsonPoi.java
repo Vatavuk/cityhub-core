@@ -30,6 +30,7 @@ public class BsonPoi implements Poi {
         try(JsonReader reader = Json.createReader(
             new StringReader(this.document.toJson()))
         ) {
+
             return reader.readObject();
         }
     }
