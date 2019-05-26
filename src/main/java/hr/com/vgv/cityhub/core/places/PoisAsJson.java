@@ -47,6 +47,7 @@ public class PoisAsJson implements JsonReadable {
                 .add("places", builder.build()).build();
     }
 
+    //TODO: add unit tests
     private boolean isPoiOpen(Poi poi) {
         List<String> weeklyWorkDays = Arrays.asList(poi.json().getString("workingHours").split(";"));
         String currentDay = DayOfWeek.from(LocalDate.now()).getDisplayName(TextStyle.SHORT, new Locale("hr", "HR"));
