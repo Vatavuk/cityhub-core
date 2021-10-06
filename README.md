@@ -1,6 +1,6 @@
 # Cityhub-core
 
-Cityhub-core is a web application for managing places of interest in a city.
+Cityhub-core is a web application for managing places of interest in Zagreb city.
 
 API is, currently, exposed through a two REST endpoint:
 
